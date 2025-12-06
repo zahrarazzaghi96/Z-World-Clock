@@ -1,12 +1,7 @@
 body {
-  background: #78a6f0;
-  color: #677de8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Poiret One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  background: #88b4fb;
+  color: #6073d3;
+  font-family: sans-serif;
 }
 h1 {
   text-align: center;
@@ -29,9 +24,9 @@ select {
 .container {
   max-width: 600px;
   margin: 60px auto;
-  background: white;
+  background: #b1cdf9;
   padding: 30px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(119, 119, 131, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
 }
 
