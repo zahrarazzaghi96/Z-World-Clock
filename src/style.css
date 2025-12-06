@@ -1,6 +1,12 @@
 body {
-  background-color: #f9f7fe;
-  font-family: sans-serif;
+  background: #78a6f0;
+  color: #677de8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 h1 {
   text-align: center;
