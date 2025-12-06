@@ -1,6 +1,5 @@
 body {
-  background: #88b4fb;
-  color: #6073d3;
+  background: #f9f7fe;
   font-family: sans-serif;
 }
 h1 {
@@ -24,7 +23,7 @@ select {
 .container {
   max-width: 600px;
   margin: 60px auto;
-  background: #b1cdf9;
+  background: white;
   padding: 30px;
   box-shadow: rgba(119, 119, 131, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
