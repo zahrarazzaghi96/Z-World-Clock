@@ -1,28 +1,62 @@
-// Los Angeles
 function updateTime() {
-  let losAngelesElement = document.querySelector("#los-angeles");
-  if (losAngelesElement) {
-    let losAngelesDateElement = losAngelesElement.querySelector(".date");
-    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-    let losAngelesTime = moment().tz("America/Los_Angeles");
+  let maseruElement = document.querySelector("#maseru");
+  if (maseruElement) {
+    let maseruDateElement = document.querySelector("#maseru-date");
+    let currentMaseruDate = moment().tz("Africa/MAseru").format("MMMM Do YYYY");
+    maseruDateElement.innerHTML = currentMaseruDate;
 
-    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM	Do YYYY");
-    losAngelesTimeElement.innerHTML = losAngelesTime.format(
-      "h:mm:ss [<small>]A[</small>]"
-    );
+    let maseruTimeElement = document.querySelector("#maseru-time");
+    let currentMaseruTime = moment().tz("Africa/Maseru").format("h:mm:ss");
+    maseruTimeElement.innerHTML = currentMaseruTime;
+
+    let maseruMarkerElement = document.querySelector("#maseru-marker");
+    let currentMaseruMarker = moment().tz("Africa/Maseru").format("A");
+    maseruMarkerElement.innerHTML = currentMaseruMarker;
   }
 
-  // Paris
+  let fijiElement = document.querySelector("#fiji");
+  if (fijiElement) {
+    let fijiDateElement = document.querySelector("#fiji-date");
+    let currentFijiDate = moment().tz("Pacific/Fiji").format("MMMM Do YYYY");
+    fijiDateElement.innerHTML = currentFijiDate;
+
+    let fijiTimeElement = document.querySelector("#fiji-time");
+    let currentFijiTime = moment().tz("Pacific/Fiji").format("h:mm:ss");
+    fijiTimeElement.innerHTML = currentFijiTime;
+
+    let fijiMarkerElement = document.querySelector("#fiji-marker");
+    let currentFijiMarker = moment().tz("Pacific/Fiji").format("A");
+    fijiMarkerElement.innerHTML = currentFijiMarker;
+  }
+
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = document.querySelector("#tokyo-date");
+    let currentTokyoDate = moment().tz("Asia/Tokyo").format("MMMM Do YYYY");
+    tokyoDateElement.innerHTML = currentTokyoDate;
+
+    let tokyoTimeElement = document.querySelector("#tokyo-time");
+    let currentTokyoTime = moment().tz("Asia/Tokyo").format("h:mm:ss");
+    tokyoTimeElement.innerHTML = currentTokyoTime;
+
+    let tokyoMarkerElement = document.querySelector("#tokyo-marker");
+    let currentTokyoMarker = moment().tz("Asia/Tokyo").format("A");
+    tokyoMarkerElement.innerHTML = currentTokyoMarker;
+  }
+
   let parisElement = document.querySelector("#paris");
   if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisTime = moment().tz("Europe/Paris");
+    let parisDateElement = document.querySelector("#paris-date");
+    let currentParisDate = moment().tz("Europe/Paris").format("MMMM Do YYYY");
+    parisDateElement.innerHTML = currentParisDate;
 
-    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
-    parisTimeElement.innerHTML = parisTime.format(
-      "h:mm:ss [<small>]A[</small>]"
-    );
+    let parisTimeElement = document.querySelector("#paris-time");
+    let currentParisTime = moment().tz("Europe/Paris").format("h:mm:ss");
+    parisTimeElement.innerHTML = currentParisTime;
+
+    let parisMarkerElement = document.querySelector("#paris-marker");
+    let currentParisMarker = moment().tz("Europe/Paris").format("A");
+    parisMarkerElement.innerHTML = currentParisMarker;
   }
 }
 
@@ -31,19 +65,25 @@ function updateCity(event) {
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
+
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
+  let cityDate = moment().tz(cityTimeZone).format("MMMM Do YYYY");
+  let cityTime = moment().tz(cityTimeZone).format("h:mm:ss");
+  let cityMarker = moment().tz("Europe/Paris").format("A");
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `
-  <div class="city">
-    <div>
-      <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
-    </div>
-    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
-    "A"
-  )}</small></div>
-  </div>`;
+     <div class="city">
+          <div class="city-date">
+            <h2 class="name-of-city">${cityName}</h2>
+            <div class="date-of-city">${cityDate}</div>
+          </div>
+          <div class="time-of-city">
+            <span>${cityTime}</span>
+            <span class="meridiem-markers">${cityMarker}</span>
+          </div>
+        </div>
+        <a href="/" class="back-link">Back to all cities</a>
+  `;
 }
 
 updateTime();

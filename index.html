@@ -12,28 +12,58 @@
   <body>
     <div class="container">
       <h1>World Clock</h1>
-      <select id="city">
-        <option value="">Select a city..</option>
+      <select name="" id="city">
+        <option value="">Select a city...</option>
         <option value="current">My current location</option>
-        <option value="Europe/London">London</option>
+        <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+        <option value="Africa/Harare">Harare 🇿🇼</option>
+        <option value="Europe/Rome">Rome 🇮🇹</option>
+        <option value="Pacific/Samoa">Samoa 🇼🇸</option>
         <option value="America/New_York">New York</option>
-        <option value="Pacific/Auckland">Auckland</option>
       </select>
-
       <div id="cities">
-        <div class="city" id="los-angeles">
-          <div>
-            <h2>Los Angeles 🇺🇸</h2>
-            <div class="date"></div>
+        <div class="city" id="maseru">
+          <div class="city-date">
+            <h2 class="name-of-city" id="maseru">Maseru 🇱🇸</h2>
+            <div class="date-of-city" id="maseru-date"></div>
           </div>
-          <div class="time"></div>
+          <div class="time-of-city">
+            <span id="maseru-time"></span>
+            <span class="meridiem-markers" id="maseru-marker"></span>
+          </div>
         </div>
-        <div class="city" id="paris">
-          <div>
-            <h2>Paris</h2>
-            <div class="date"></div>
+
+        <div class="city" id="fiji">
+          <div class="city-date">
+            <h2 class="name-of-city" id="fiji">Fiji 🇫🇯</h2>
+            <div class="date-of-city" id="fiji-date"></div>
           </div>
-          <div class="time"></div>
+          <div class="time-of-city">
+            <span id="fiji-time"></span>
+            <span class="meridiem-markers" id="fiji-marker"></span>
+          </div>
+        </div>
+
+        <div class="city" id="tokyo">
+          <div class="city-date">
+            <h2 class="name-of-city" id="tokyo">Tokyo 🇯🇵</h2>
+            <div class="date-of-city" id="tokyo-date"></div>
+          </div>
+          <div class="time-of-city">
+            <span id="tokyo-time"></span>
+            <span class="meridiem-markers" id="tokyo-marker"></span>
+          </div>
+        </div>
+
+        <div class="city" id="paris">
+          <div class="city-date">
+            <h2 class="name-of-city" id="paris">Paris 🇫🇷</h2>
+            <div class="date-of-city" id="paris-date"></div>
+          </div>
+          <div class="time-of-city">
+            <span id="paris-time"></span>
+            <span class="meridiem-markers" id="paris-marker"></span>
+          </div>
         </div>
       </div>
     </div>
